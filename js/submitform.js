@@ -1,12 +1,16 @@
 $(document).ready(
     function () {
         othercountry();
+        cough();
+        sob();
     }
 );
 
 function submitdata() {
     var flag = 0;
     var data = {};
+    data['user_name'] = $('#user_name').val();
+    data['contact_num'] = $('#contact_num').val();
     data['mr_number'] = $('#mr_number').val();
     data['age'] = $('#age').val();
     if (data['age'] == undefined || data['age'] == '') {
@@ -82,6 +86,8 @@ function submitdata() {
     data['Stomach_Pain'] = $("#Stomach_Pain:checked").val();
     data['Sneezing'] = $("#Sneezing:checked").val();
     data['Runny_Nose'] = $("#Runny_Nose:checked").val();
+    data['days_cough'] = $("#days_cough").val();
+    data['day_sob'] = $("#day_sob").val();
     data['Heart_Problems'] = $("#Heart_Problems:checked").val();
     data['Diabetics'] = $("#Diabetics:checked").val();
     data['Hypertensive'] = $("#Hypertensive:checked").val();
@@ -93,11 +99,19 @@ function submitdata() {
             method: 'POST',
             data: data,
             success: function (res) {
+                $('.msg').removeClass('dhide');
+
                 if (data['fever'] == 'Yes' && data['Cough'] == 'Y' && data['Shortness_of_Breath'] == 'Y') {
+                    $('.msg').removeClass('error').addClass('success');
+                    $('.msgText').html('You should consult your nearest COVID-19 center and tell the doctor about you symptoms');
                     swal("Please get yourself tested for Coronavirus.", "We successfully received your query");
                 } else if (res == 1) {
+                    $('.msg').removeClass('error').addClass('success');
+                    $('.msgText').html('We successfully received your query');
                     swal("Good job!", "We successfully received your query", "success");
                 } else {
+                    $('.msg').removeClass('success').addClass('error');
+                    $('.msgText').html('OOPS! Something went wrong');
                     swal("OOPS!", "Something went wrong", "error");
                 }
             }
@@ -107,20 +121,38 @@ function submitdata() {
     }
 }
 
-function skipQuestion(main,child) {
-    var fever=$('#'+main).val();
-    if(fever=='No'){
-        $('.'+child).addClass('dhide');
-    }else{
-        $('.'+child).removeClass('dhide');
+function skipQuestion(main, child) {
+    var fever = $('#' + main).val();
+    if (fever == 'No') {
+        $('.' + child).addClass('dhide');
+    } else {
+        $('.' + child).removeClass('dhide');
     }
 }
 
 function othercountry() {
-    var Others=$("#Others:checked").val();
-    if (Others=='Others'){
-        $('.othercountry').removeClass('dhide')
-    }  else{
+    var Others = $("#Others:checked").val();
+    if (Others == 'Others') {
+        $('.othercountry').removeClass('dhide');
+    } else {
         $('.othercountry').addClass('dhide')
+    }
+}
+
+function cough() {
+    var Cough = $("#Cough:checked").val();
+    if (Cough == 'Y') {
+        $('.othercough').removeClass('dhide');
+    } else {
+        $('.othercough').addClass('dhide')
+    }
+}
+
+function sob() {
+    var Shortness_of_Breath = $("#Shortness_of_Breath:checked").val();
+    if (Shortness_of_Breath == 'Y') {
+        $('.otherShortness_of_Breath').removeClass('dhide');
+    } else {
+        $('.otherShortness_of_Breath').addClass('dhide')
     }
 }

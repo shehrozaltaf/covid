@@ -841,3 +841,23 @@ textarea.input100 {
 .dhide {
     display: none;
 }
+
+.req {
+    /*color: red;*/
+}
+
+.card {
+    border: 1px solid;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.success {
+    border: 1px solid green;
+    color: green;
+}
+
+.error {
+    border: 1px solid red;
+    color: red;
+}

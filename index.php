@@ -20,19 +20,19 @@
 				</span>
 
             <div class="wrap-input100 bg1">
-                <span class="label-input100">MR-Number:</span>
+                <span class="label-input100">MR-Number</span>
                 <input class="input100" type="text" name="mr_number" id="mr_number" placeholder="Enter MR-Number">
                 <span class="focus-input100"></span>
             </div>
 
             <div class="wrap-input100 bg1">
-                <span class="label-input100">Age (in years) *: </span>
+                <span class="label-input100">Age (in years) <span class="req">*</span> </span>
                 <input class="input100" type="number" min="1" max="99" name="age" id="age"
                        placeholder="Enter Age (in years)">
             </div>
 
             <div class="wrap-input100 input100-select bg1">
-                <span class="label-input100">Gender *:</span>
+                <span class="label-input100">Gender <span class="req">*</span></span>
                 <div>
                     <select class="js-select2" name="gender" id="gender">
                         <option value="0" readonly disabled selected>Select gender</option>
@@ -45,7 +45,7 @@
             </div>
 
             <div class="wrap-input100 bg1 rs1-wrap-input100">
-                <span class="label-input100">Weight:</span>
+                <span class="label-input100">Weight</span>
                 <input class="input100" type="text" name="weight" id="weight" placeholder="Enter Weight">
             </div>
 
@@ -55,7 +55,7 @@
             </div>
 
             <div class="wrap-input100 input100-select bg1 rs1-wrap-input100">
-                <span class="label-input100">Blood Group *:</span>
+                <span class="label-input100">Blood Group <span class="req">*</span></span>
                 <div>
                     <select class="js-select2" name="blood_group" id="blood_group">
                         <option value="0" readonly disabled selected>Select Blood Group</option>
@@ -73,7 +73,7 @@
             </div>
 
             <div class="wrap-input100 input100-select bg1 rs1-wrap-input100">
-                <span class="label-input100">Marital Status *:</span>
+                <span class="label-input100">Marital Status <span class="req">*</span></span>
                 <div>
                     <select class="js-select2" name="marital_status" id="marital_status">
                         <option value="0" readonly disabled selected>Select Marital Status</option>
@@ -85,7 +85,7 @@
                 </div>
             </div>
             <div class="wrap-input100 input100-select bg1">
-                <span class="label-input100">Fever *:</span>
+                <span class="label-input100">Fever <span class="req">*</span></span>
                 <div>
                     <select class="js-select2" name="fever" id="fever"
                             onchange="skipQuestion('fever','fever_child')">
@@ -97,17 +97,17 @@
                 </div>
             </div>
             <div class="wrap-input100  bg1 rs1-wrap-input100 fever_child dhide">
-                <span class="label-input100">Duration of Fever (in Days):</span>
+                <span class="label-input100">Duration of Fever (in Days)</span>
                 <input class="input100" type="number" min="1" name="duration_of_fever" id="duration_of_fever"
                        placeholder="Enter Duration of Fever">
             </div>
             <div class="wrap-input100  bg1 rs1-wrap-input100 fever_child dhide">
-                <span class="label-input100">Current Temperature (in Celsius )*:</span>
+                <span class="label-input100">Current Temperature (in Celsius )<span class="req">*</span></span>
                 <input class="input100" type="number" value="99" min="99" max="102" name="current_temperature"
                        id="current_temperature" placeholder="Enter Current Temperature">
             </div>
             <div class="wrap-input100 input100-select bg1">
-                <span class="label-input100">Hospital Admission (last 14 days) *:</span>
+                <span class="label-input100">Hospital Admission (last 14 days) <span class="req">*</span></span>
                 <div>
                     <select class="js-select2"
                             onchange="skipQuestion('hospital_admission','hospital_admission_child')"
@@ -121,13 +121,13 @@
             </div>
 
             <div class="wrap-input100  bg1 hospital_admission_child dhide">
-                <span class="label-input100">Date of Discharge:</span>
+                <span class="label-input100">Date of Discharge</span>
                 <input class="input100" type="date" name="date_of_discharge" id="date_of_discharge"
                        placeholder="Enter Date of Discharge">
             </div>
 
             <div class="wrap-input100 input100-select bg1 ">
-                <span class="label-input100">Contact with Patient *:</span>
+                <span class="label-input100">Contact with Patient <span class="req">*</span></span>
                 <div>
                     <select class="js-select2" name="contact_with_Patient"
                             onchange="skipQuestion('contact_with_Patient','contact_with_Patient_child')"
@@ -140,7 +140,7 @@
                 </div>
             </div>
             <div class="wrap-input100 input100-select bg1 contact_with_Patient_child dhide">
-                <span class="label-input100">Contact with COVID Patient *:</span>
+                <span class="label-input100">Contact with COVID Patient <span class="req">*</span></span>
                 <div>
                     <select class="js-select2" name="contact_with_covid_patient" id="contact_with_covid_patient">
                         <option value="0" readonly disabled selected>Select Contact with COVID Patient</option>
@@ -151,7 +151,7 @@
                 </div>
             </div>
             <div class="wrap-input100 input100-select bg1">
-                <span class="label-input100">History of Travel (last 14 days) *:</span>
+                <span class="label-input100">History of Travel (last 14 days) <span class="req">*</span></span>
                 <div>
                     <select class="js-select2" name="travel_history" id="travel_history"
                             onchange="skipQuestion('travel_history','travel_history_child')">
@@ -214,13 +214,13 @@
             </div>
 
             <div class="wrap-input100  bg1 dhide othercountry">
-                <span class="label-input100">Others (country):</span>
+                <span class="label-input100">Others (country)</span>
                 <input class="input100" type="text" name="other_country" id="other_country"
                        placeholder="Enter Country that you visited">
             </div>
 
             <div class="wrap-input100  bg1 travel_history_child dhide">
-                <span class="label-input100">Date of Arrival (in Pakistan):</span>
+                <span class="label-input100">Date of Arrival (in Pakistan)</span>
                 <input class="input100" type="date" name="date_of_arrival" id="date_of_arrival"
                        placeholder="Enter Date of Arrival (in Pakistan)">
             </div>
@@ -229,7 +229,7 @@
                 <span class="label-input100">Symptoms</span>
                 <div class="m-t-15 checbox_maindiv">
                     <div class="checkbox">
-                        <input id="Cough" type="checkbox" name="Cough" value="Y">
+                        <input id="Cough" type="checkbox" name="Cough" value="Y" onclick="cough()">
                         <label for="Cough">Cough</label>
                     </div>
                     <div class="checkbox">
@@ -237,7 +237,8 @@
                         <label for="Sore_Throat">Sore Throat</label>
                     </div>
                     <div class="checkbox">
-                        <input id="Shortness_of_Breath" type="checkbox" name="Shortness_of_Breath" value="Y">
+                        <input id="Shortness_of_Breath" type="checkbox" name="Shortness_of_Breath"
+                               onclick="sob()" value="Y">
                         <label for="Shortness_of_Breath">Shortness of Breath</label>
                     </div>
                     <div class="checkbox">
@@ -283,6 +284,18 @@
                 </div>
             </div>
 
+            <div class="wrap-input100  bg1 rs1-wrap-input100 othercough dhide">
+                <span class="label-input100">Days of cough<span class="req">*</span></span>
+                <input class="input100" type="number" min="1" name="days_cough"
+                       id="days_cough" placeholder="Enter Days of cough">
+            </div>
+
+            <div class="wrap-input100  bg1 rs1-wrap-input100 otherShortness_of_Breath dhide">
+                <span class="label-input100">Days of Shortness of Breath<span class="req">*</span></span>
+                <input class="input100" type="number" min="1" name="day_sob"
+                       id="day_sob" placeholder="Enter Current Temperature">
+            </div>
+
             <div class="wrap-input100 bg1 ">
                 <span class="label-input100">Pre-Existing Conditions</span>
                 <div class="m-t-15 checbox_maindiv1">
@@ -308,7 +321,18 @@
                     </div>
                 </div>
             </div>
+            <hr>
 
+            <div class="wrap-input100  bg1 rs1-wrap-input100">
+                <span class="label-input100">Name</span>
+                <input class="input100" type="text" name="user_name"
+                       id="user_name" placeholder="Enter Current Temperature">
+            </div>
+            <div class="wrap-input100  bg1 rs1-wrap-input100">
+                <span class="label-input100">Contact Number</span>
+                <input class="input100" type="number" name="contact_num"
+                       id="contact_num" placeholder="Enter Contact Number">
+            </div>
             <div class="container-contact100-form-btn">
                 <button class="contact100-form-btn" onclick="submitdata()">
 						<span>
@@ -316,6 +340,15 @@
 							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
 						</span>
                 </button>
+
+            </div>
+            <div class="card m-t-15 msg dhide">
+                <div class="container">
+                    <h4><b>Result: </b></h4>
+                    <ul>
+                        <li class="msgText"></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>

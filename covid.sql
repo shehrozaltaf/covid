@@ -11,7 +11,7 @@
  Target Server Version : 100137
  File Encoding         : 65001
 
- Date: 30/03/2020 19:15:36
+ Date: 31/03/2020 05:06:47
 */
 
 SET NAMES utf8mb4;
@@ -23,6 +23,8 @@ SET FOREIGN_KEY_CHECKS = 0;
 DROP TABLE IF EXISTS `covid_data`;
 CREATE TABLE `covid_data`  (
   `idCovid` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `user_name` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  `contact_num` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   `mr_number` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `age` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `gender` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
@@ -54,6 +56,8 @@ CREATE TABLE `covid_data`  (
   `Stomach_Pain` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `Sneezing` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `Runny_Nose` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `days_cough` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  `day_sob` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   `Heart_Problems` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `Diabetics` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `Hypertensive` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
@@ -61,14 +65,15 @@ CREATE TABLE `covid_data`  (
   `Cancer` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `server_date_time` timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`idCovid`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of covid_data
 -- ----------------------------
-INSERT INTO `covid_data` VALUES (1, 'adasdsa12321', '27', '2', '44', '6.2', 'B-', 'Single', 'Yes', '3', '99', 'Yes', '13 Septmmber 2019', 'Yes', 'Yes', 'Yes', 'Italy, China, Iran, Spain, Germany, France, USA, UK, Netherlands, Japan, Others', NULL, '10 Ocotber 2010', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', '2020-03-30 17:44:55');
-INSERT INTO `covid_data` VALUES (5, 'HH1234', '27', '1', '', '', 'B+', 'Single', 'Yes', '12', '12', 'No', 'D', 'Yes', 'Yes', 'Yes', 'Italy, Iran, UK', NULL, '', '', 'Y', '', 'Y', '', '', '', '', '', '', 'Y', '', '', '', '', '', '', 'Y', '2020-03-30 18:16:35');
-INSERT INTO `covid_data` VALUES (6, 'ABC1234', '27', '1', '72', '6.0', 'B+', 'Single', 'No', '', '99', 'No', '', 'No', '', 'No', '', '', '', '', '', '', '', 'Y', '', '', 'Y', '', '', '', 'Y', '', '', '', '', '', '', '2020-03-30 19:07:55');
-INSERT INTO `covid_data` VALUES (7, 'ABC1234', '28', '2', '45', '5.6', 'B-', 'Married', 'Yes', '4', '101', 'Yes', '', 'Yes', 'Yes', 'Yes', 'Italy, Spain, Others', 'Canada', '2019-03-11', 'Y', '', 'Y', 'Y', '', 'Y', '', '', '', '', '', 'Y', 'Y', '', 'Y', '', 'Y', 'Y', '2020-03-30 19:10:21');
+INSERT INTO `covid_data` VALUES (1, NULL, NULL, 'adasdsa12321', '27', '2', '44', '6.2', 'B-', 'Single', 'Yes', '3', '99', 'Yes', '13 Septmmber 2019', 'Yes', 'Yes', 'Yes', 'Italy, China, Iran, Spain, Germany, France, USA, UK, Netherlands, Japan, Others', NULL, '10 Ocotber 2010', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', NULL, NULL, 'Y', 'Y', 'Y', 'Y', 'Y', '2020-03-30 17:44:55');
+INSERT INTO `covid_data` VALUES (5, NULL, NULL, 'HH1234', '27', '1', '', '', 'B+', 'Single', 'Yes', '12', '12', 'No', 'D', 'Yes', 'Yes', 'Yes', 'Italy, Iran, UK', NULL, '', '', 'Y', '', 'Y', '', '', '', '', '', '', 'Y', '', '', NULL, NULL, '', '', '', '', 'Y', '2020-03-30 18:16:35');
+INSERT INTO `covid_data` VALUES (6, NULL, NULL, 'ABC1234', '27', '1', '72', '6.0', 'B+', 'Single', 'No', '', '99', 'No', '', 'No', '', 'No', '', '', '', '', '', '', '', 'Y', '', '', 'Y', '', '', '', 'Y', '', NULL, NULL, '', '', '', '', '', '2020-03-30 19:07:55');
+INSERT INTO `covid_data` VALUES (7, NULL, NULL, 'ABC1234', '28', '2', '45', '5.6', 'B-', 'Married', 'Yes', '4', '101', 'Yes', '', 'Yes', 'Yes', 'Yes', 'Italy, Spain, Others', 'Canada', '2019-03-11', 'Y', '', 'Y', 'Y', '', 'Y', '', '', '', '', '', 'Y', 'Y', NULL, NULL, '', 'Y', '', 'Y', 'Y', '2020-03-30 19:10:21');
+INSERT INTO `covid_data` VALUES (8, 'Shehroz Altaf', '03432855294', 'ABCD123123', '30', '1', '67', '5.9', 'O+', 'Married', 'Yes', '4', '102', 'Yes', '2019-09-15', 'Yes', 'No', 'Yes', 'Italy, Iran, Japan, Others', 'Canada', '2020-10-30', 'Y', '', 'Y', 'Y', '', '', '', '', '', '', '', 'Y', 'Y', '5', '6', 'Y', '', 'Y', '', 'Y', '2020-03-31 04:58:43');
 
 SET FOREIGN_KEY_CHECKS = 1;
